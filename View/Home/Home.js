@@ -42,28 +42,28 @@ export class Home extends React.Component {
                     {display_data}
                 </Container>
                 <Footer>
-                    <FooterTab style={{ backgroundColor: '#010001', justifyContent: "center" }}>
+                    <FooterTab style={{ backgroundColor: '#6cbdc0', justifyContent: "center" }}>
                         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center", }}
                             onPress={() => { this.setState({ page: 'News' }) }}
                         >
-                            <Icon name="earth" size={24} style={{ color: this.state.page == 'News' ? '#ffffff' : '#797e86', }}/>
-                            <Text style={[ styles.text_font, { color: this.state.page == 'News' ? '#ffffff' : '#797e86', } ]}>News</Text>
+                            <Icon name="earth" size={24} style={{ color: this.state.page == 'News' ? '#ffffff' : '#000000', }}/>
+                            <Text style={[ styles.text_font, { color: this.state.page == 'News' ? '#ffffff' : '#000000', } ]}>News</Text>
                         </TouchableOpacity>
                     </FooterTab>
-                    <FooterTab style={{ backgroundColor: '#010001', justifyContent: "center" }}>
+                    <FooterTab style={{ backgroundColor: '#6cbdc0', justifyContent: "center" }}>
                         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center", }}
                             onPress={() => { this.setState({ page: 'Shop' }) }}
                         >
-                            <Icon name="store" size={24} style={{ color: this.state.page == 'Shop' ? '#ffffff' : '#797e86', }}/>
-                            <Text style={[ styles.text_font, { color: this.state.page == 'Shop' ? '#ffffff' : '#797e86', } ]}>Shop</Text>
+                            <Icon name="store" size={24} style={{ color: this.state.page == 'Shop' ? '#ffffff' : '#000000', }}/>
+                            <Text style={[ styles.text_font, { color: this.state.page == 'Shop' ? '#ffffff' : '#000000', } ]}>Cafe'</Text>
                         </TouchableOpacity>
                     </FooterTab>
-                    <FooterTab style={{ backgroundColor: '#010001', justifyContent: "center" }}>
+                    <FooterTab style={{ backgroundColor: '#6cbdc0', justifyContent: "center" }}>
                         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center", }}
                             onPress={() => { this.setState({ page: 'Profile' }) }}
                         >
-                            <Icon name="account" size={24} style={{ color: this.state.page == 'Profile' ? '#ffffff' : '#797e86', }}/>
-                            <Text style={[ styles.text_font, { color: this.state.page == 'Profile' ? '#ffffff' : '#797e86', } ]}>Profile</Text>
+                            <Icon name="account" size={24} style={{ color: this.state.page == 'Profile' ? '#ffffff' : '#000000', }}/>
+                            <Text style={[ styles.text_font, { color: this.state.page == 'Profile' ? '#ffffff' : '#000000', } ]}>Profile</Text>
                         </TouchableOpacity>
                     </FooterTab>
                 </Footer>

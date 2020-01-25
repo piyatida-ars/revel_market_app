@@ -69,7 +69,7 @@ export class ShopDetail extends React.Component {
                 display_data.push(<NotFound/>);
             }else{
                 display_data.push(
-                    <View>
+                    <View >
                         <ImageBackground 
                             resizeMode="cover" 
                             source={{ uri: GOBALS.URL + this.state.shop.shop_image_name }} 
@@ -81,13 +81,13 @@ export class ShopDetail extends React.Component {
                         </ImageBackground>
                         {this.state.shop.shop_description != '' ? 
                         <View style={{ padding: 20, paddingBottom: 0, }}>
-                            <Text style={[ styles.text_font, ]}>{this.state.shop.shop_description}</Text>
+                            <Text style={[ styles.text_font,{  color: '#010001', } ]}>{this.state.shop.shop_description}</Text>
                         </View>
                         : null
                         }
                         {this.state.shop.shop_detail != '' ? 
                         <View style={{ padding: 20, paddingBottom: 0, }}>
-                            <Text style={[ styles.text_font, ]}>{this.state.shop.shop_detail}</Text>
+                            <Text style={[ styles.text_font,{ color: '#010001', } ]}>{this.state.shop.shop_detail}</Text>
                         </View>
                         : null
                         }
@@ -95,14 +95,14 @@ export class ShopDetail extends React.Component {
                             {this.state.shop.shop_address != '' ? 
                             <View style={{ flexDirection: 'row', marginBottom: 4 }}>
                                 <Icon name="map-marker" size={15} style={{ color: 'red', marginTop: 2 }} />
-                                <Text style={[ styles.text_font, { color: '#e6e6e6', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_address}</Text>
+                                <Text style={[ styles.text_font, { color: '#010001', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_address}</Text>
                             </View>
                             : null
                             }
                             {this.state.shop.shop_tel != '' ? 
                             <View style={{ flexDirection: 'row', }}>
                                 <Icon name="cellphone-android" size={15} style={{ color: '#2899f2', marginTop: 2 }} />
-                                <Text style={[ styles.text_font, { color: '#e6e6e6', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_tel}</Text>
+                                <Text style={[ styles.text_font, { color: '#010001', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_tel}</Text>
                             </View>
                             : null
                             }
@@ -113,7 +113,7 @@ export class ShopDetail extends React.Component {
         }
 
         return (
-            <ScrollView style={{ backgroundColor: '#010001', }}>
+            <ScrollView style={{ backgroundColor: '#c7f9f4', }}>
                 <StatusBar hidden={true} />
                 {display_data}
             </ScrollView>

@@ -81,11 +81,11 @@ export class NewsDetail extends React.Component {
                         </View>
                         <View style={{ paddingLeft: 15, paddingRight: 15, }}>
                             {this.state.news.news_description != '' ? 
-                            <Text style={[ styles.text_font, { marginBottom: 12, }]}>{this.state.news.news_description}</Text>
+                            <Text style={[ styles.text_font, { marginBottom: 12, color:'ff9900', }]}>{this.state.news.news_description}</Text>
                             : null 
                             }
                             {this.state.news.news_detail != '' ? 
-                            <Text style={[ styles.text_font, { marginBottom: 8, }]}>{this.state.news.news_detail}</Text>
+                            <Text style={[ styles.text_font, { marginBottom: 8, color:'ff9900' }]}>{this.state.news.news_detail}</Text>
                             : null
                             }
                         </View>
@@ -95,7 +95,7 @@ export class NewsDetail extends React.Component {
         }
 
         return (
-            <ScrollView style={{ backgroundColor: '#010001', }}>
+            <ScrollView style={{ backgroundColor: '#c7f9f4', }}>
                 <StatusBar hidden={true} />
                 {display_data} 
             </ScrollView>

@@ -91,7 +91,7 @@ export default class News extends React.Component {
                             <View style={{ flex: 1, flexDirection: 'column', paddingLeft: 10 }} >
                                 <Text style={[ styles.text_font, { fontSize: 18, color: '#ff9900', }]} numberOfLines={1}>{this.state.news[i].news_title}</Text>
                                 <Text style={[ styles.text_font, { fontSize: 12, color: 'gray', }]}>{this.state.news[i].news_date}</Text>
-                                <Text style={[ styles.text_font, { fontSize: 14, } ]} numberOfLines={4}>{this.state.news[i].news_description}</Text>
+                                <Text style={[ styles.text_font, { fontSize: 14, color:'#ff9900'} ]} numberOfLines={4}>{this.state.news[i].news_description}</Text>
                             </View>
                         </View>
                     )
@@ -100,8 +100,8 @@ export default class News extends React.Component {
         }
 
         return (
-            <Content style={{ backgroundColor: '#010001', }}>
-                <Header style={{ backgroundColor: '#010001' }}>
+            <Content style={{ backgroundColor: '#c7f9f4', }}>
+                <Header style={{ backgroundColor: '#6cbdc0' }}>
                     <ImageBackground 
                         resizeMode='cover' 
                         source={require('../../images/bghead.png')} 

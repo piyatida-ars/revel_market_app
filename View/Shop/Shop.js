@@ -88,7 +88,7 @@ export default class Shop extends React.Component {
                             <TouchableOpacity onPress={() => {this.props.navigation.navigate('ShopDetail',{ shop_code: this.state.shop[i].shop_code })}}>
                                 <View style={{ height: 58, padding: 8, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
                                     <Text numberOfLines={1} style={styles.text_font}>{this.state.shop[i].shop_name}</Text>
-                                    <Text numberOfLines={1} style={[ styles.text_font, { fontSize: 12, }]}>{this.state.shop[i].shop_description}</Text>
+                                    <Text numberOfLines={1} style={[ styles.text_font, { fontSize: 12,}]}>{this.state.shop[i].shop_description}</Text>
                                 </View>
                             </TouchableOpacity>
                         </ImageBackground>
@@ -98,27 +98,27 @@ export default class Shop extends React.Component {
         } 
 
         return (                
-            <Content style={{ backgroundColor: '#010001', }}>
-                <Header style={{ backgroundColor: '#010001', }}>
+            <Content style={{ backgroundColor: '#bdf4ed', }}>
+                <Header style={{ backgroundColor: '#6cbdc0', }}>
                     <ImageBackground 
                         resizeMode='cover' 
                         source={require('../../images/bghead.png')} 
-                        style={{ width: '100%', justifyContent: "center", alignItems: "center" }} 
+                        style={{ backgroundColor:'#6cbdc0', width: '100%', justifyContent: "center", alignItems: "center" }} 
                     >
-                        <Text style={[ styles.text_font, { fontSize: 18, }]}>ค้นหาร้านค้า</Text>
+                        <Text style={[ styles.text_font, { fontSize: 18, }]}>ค้นหา</Text>
                     </ImageBackground>
                 </Header>
                 <View style={{ padding: 12, }}>
-                    <View style={[{ height: 48, backgroundColor: '#474648', flexDirection: 'row', borderRadius: 25, elevation: 3, }]}>
+                    <View style={[{ height: 48, backgroundColor: '#6cbdc0', flexDirection: 'row', borderRadius: 25, elevation: 3, }]}>
                         <TextInput style={[ styles.text_font, { flex: 1, paddingLeft: 18, }]}
                             placeholder="What are you looking for ?" 
-                            placeholderTextColor="#979697"
+                            placeholderTextColor="#FFF"
                             underlineColorAndroid="transparent"
                             onChangeText={(keyword) => { this.setState({ keyword }) }}
                             value={this.state.keyword} 
                         />
                         <TouchableOpacity style={{ width: 50, height: 60, }} onPress={() => { this._fetchData() }}>
-                            <Icon name="magnify" size={28} style={{ color: '#979697', marginTop: 10, }} />
+                            <Icon name="magnify" size={28} style={{ color: '#FFF', marginTop: 10, }} />
                         </TouchableOpacity>
                     </View>
                 </View>

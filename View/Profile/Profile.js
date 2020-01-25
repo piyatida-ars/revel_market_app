@@ -142,7 +142,7 @@ export default class Profile extends React.Component {
         }
 
         return (
-            <ScrollView style={{ backgroundColor: '#010001', }}>
+            <ScrollView style={{ backgroundColor: '#e8526e', }}>
                 {display_data}
             </ScrollView>
         );
