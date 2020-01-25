@@ -35,10 +35,11 @@ export class Login extends React.Component {
     componentDidMount() {
         AsyncStorage.getItem('user_data').then((user) => { return JSON.parse(user) }).then((user_data) => {
             if (user_data != null) {
-                this.setState({ 
-                    username: user_data.user_username, 
-                    password: user_data.user_password 
-                });
+                // this.setState({ 
+                //     username: user_data.user_username, 
+                //     password: user_data.user_password 
+                // });
+                this.props.navigation.navigate('Home')
             }
         });
     }
@@ -108,7 +109,7 @@ export class Login extends React.Component {
                     </Image>
                     <View style={[ styles.row_underline, { marginBottom: 16, }]}>
                         <Icon name="email-outline" style={styles.login_icon} />
-                        <TextInput placeholder="Email address"
+                        <TextInput placeholder="Username"
                             placeholderTextColor="#fff"
                             editable={!this.state.loading}
                             underlineColorAndroid='transparent' 
