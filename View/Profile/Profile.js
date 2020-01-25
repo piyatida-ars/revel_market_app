@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     Alert,
+    AsyncStorage,
     Image, 
     StyleSheet, 
     ScrollView,
@@ -9,7 +10,7 @@ import {
     View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-//import  Icon  from 'react-native-elements'
+
 import NetworkFailed from '../../component/NetworkFailed';
 import NotFound from '../../component/NotFound';
 import Loading from '../../component/Loading';
@@ -35,23 +36,25 @@ export default class Profile extends React.Component {
             loading: true,
             alert: '',
         }, () => { 
-            user_model.getUserByUserCode('U0001').then((response) => {
-                if (response == false) {
-                    this.setState({
-                        loading: false,
-                        alert: 'network-failed',
-                    });
-                }else if (response.data.length == 0) {
-                    this.setState({
-                        loading: false,
-                        alert: 'not-found',
-                    });
-                }else{
-                    this.setState({ 
-                        loading: false,
-                        user_data: response.data[0], 
-                    });
-                }
+            AsyncStorage.getItem('user_data').then((user) => { return JSON.parse(user) }).then((user_data) => {
+                user_model.getUserByUserCode(user_data.user_code).then((response) => {
+                    if (response == false) {
+                        this.setState({
+                            loading: false,
+                            alert: 'network-failed',
+                        });
+                    }else if (response.data.length == 0) {
+                        this.setState({
+                            loading: false,
+                            alert: 'not-found',
+                        });
+                    }else{
+                        this.setState({ 
+                            loading: false,
+                            user_data: response.data[0], 
+                        });
+                    }
+                })
             })
         })
     }
@@ -61,7 +64,9 @@ export default class Profile extends React.Component {
     }
 
     _logOut() {
-
+        AsyncStorage.removeItem('user_data').then(() => {
+            this.props.navigation.navigate('Login')
+        });
     }
 
     render() { 
@@ -79,7 +84,6 @@ export default class Profile extends React.Component {
                     <View style={{ padding: 20, }}>
                         <View style={styles.profile_frame}>
                             {this.state.user_data.user_image != '' ? 
-                            // <Image source={require('../../images/1.png')} style={styles.profile_image}></Image>
                             <Image source={{ uri: GOBALS.URL + this.state.user_data.user_image }} style={styles.profile_image}></Image>
                             :
                             <Image source={require('../../images/default-user.png')} style={styles.profile_image}></Image>
@@ -87,7 +91,6 @@ export default class Profile extends React.Component {
                         </View>
                         <Text style={[ styles.text_font, { alignSelf: "center", fontSize: 22, marginBottom: 16, }]}>
                             {this.state.user_data.user_name + ' ' + this.state.user_data.user_lastname}
-                            
                         </Text>
                         {this.state.user_data.user_address != '' ? 
                         <View style={{ flexDirection: 'row', marginBottom: 8, }}>
@@ -142,7 +145,7 @@ export default class Profile extends React.Component {
         }
 
         return (
-            <ScrollView style={{ backgroundColor: '#e8526e', }}>
+            <ScrollView style={{ backgroundColor: '#84cecc', }}>
                 {display_data}
             </ScrollView>
         );

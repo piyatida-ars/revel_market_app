@@ -4,6 +4,7 @@ import {
 } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
 
+import { SplashScreen } from './View/SplashScreen'
 import { Login } from './View/Login/Login'
 import { Home } from './View/Home/Home'
 import { NewsDetail } from './View/News/NewsDetail'
@@ -16,8 +17,8 @@ const HomeNavigation = createStackNavigator({
           header: null
       }
   },
-  NewsDetailTest: {  //ชื่อหน้าที่ส่งมา
-      screen: NewsDetail, //ส่งหน้าไปที่คอพาแนนไหน
+  NewsDetail: { 
+      screen: NewsDetail,
       navigationOptions: {
           title: 'รายละเอียด',
           headerTintColor: '#f3f3f3',
@@ -48,10 +49,12 @@ const HomeNavigation = createStackNavigator({
       }
   },
 }, {
-  initialRouteParams: 'Home', //ถ้าชื่อไม่ตรงก็ให้ส่งมาที่หน้า Home
+  initialRouteParams: 'Home',
 });
 
 const Navigation = createSwitchNavigator({
+  SplashScreen: SplashScreen,
+  Login: Login,
   Home: HomeNavigation,
 })
 
